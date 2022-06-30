@@ -1,0 +1,20 @@
+py -3.10 -m pip install pipenv
+pipenv install
+pipenv shell
+pip install -r .\requirements.txt
+exit
+
+# Работа с виртуальным окружением.
+'' > .env
+
+# Вариант 1.
+from os import getenv
+print(getenv("python_version"))
+
+# Вариант 2.
+from os import environ
+print(environ.get("python_version"))
+print(environ["python_version"])
+
+# Перезаписываем переменную.
+environ.__setitem__("python_version", "99")
